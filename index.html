@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html id="back">
+    <style>
+        #back{
+            background-image: url("firework.jpg");
+            background-size: cover;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title style="color:  aquamarine;">
+            반강제적 생추
+        </title>
+
+            <h1 id="text">
+            생일축하(반강제노동자: 조온유)
+            </h1>
+            <audio controls>
+                <source src="happy.wav">
+            </audio>
+            
+            <div class="location">
+            <button id="start">"간지주의자"</button>
+            <button id="stop">"멈춰!"</button>   
+            </div>
+            
+        <style>
+            .go{
+                color:fuchsia;
+            }
+            .stop{
+                color: salmon;
+            }
+        </style>
+        <script>
+            let nIntervId;
+            function changecolor() {
+                if (!nIntervId) {
+                    nIntervId = setInterval(flashtext, 1000);
+                }
+            }
+            function flashtext() {
+                const oElem = document.getElementById("text");
+                if (oElem.className === "go") {
+                    oElem.className = "stop";
+                } else {
+                    oElem.className = "go";
+                }
+            }
+            function stopTextColor() {
+                clearInterval(nIntervId);
+                nIntervId = null;
+            }
+            document.getElementById("start").addEventListener("click", changecolor);
+            document.getElementById("stop").addEventListener("click", stopTextColor);
+        </script>
+        
+    </head>
+    <body>
+        <figure style="display: block;">
+            <img src="fuku.jpg">
+            <figcaption style="color: aliceblue; font-size: 50px;">"인생...<br>
+                 위의 사진처럼<br> 살지 마셈"</figcaption>
+
+        </figure>
+        <style>
+            img{
+                animation-duration: 10s;
+                animation-name: birth;
+                animation-iteration-count: infinite;
+                }
+                @keyframes birth {
+                    from {
+                        margin-left: 95%;
+                        width: 100%;
+                    }
+                    to {
+                        margin-left: 0%
+                        
+                    }
+                }
+            }
+        </style>
+    </body>
+</html>
